@@ -12,5 +12,5 @@ jobs:
       - name: Send reminders
         run: |
           curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.BASE44_SERVICE_ROLE_KEY }}" \
+            -H "x-cron-token: ${{ secrets.CRON_SECRET_TOKEN }}" \
             https://kalori-964108c6.base44.app/functions/checkAndSendReminders
